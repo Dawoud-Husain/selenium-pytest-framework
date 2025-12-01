@@ -1,0 +1,30 @@
+{
+    "passenger": {
+        "name": "John Doe",
+        "address": "123 Main St",
+        "city": "Boston",
+        "state": "MA",
+        "zip_code": "02101"
+    },
+    "payment": {
+        "card_type": "visa",
+        "card_number": "4111111111111111",
+        "month": "12",
+        "year": "2025",
+        "name_on_card": "John Doe"
+    },
+    "routes": {
+        "paris_to_berlin": {
+            "departure": "Paris",
+            "destination": "Berlin"
+        },
+        "boston_to_london": {
+            "departure": "Boston",
+            "destination": "London"
+        },
+        "portland_to_dublin": {
+            "departure": "Portland",
+            "destination": "Dublin"
+        }
+    }
+}

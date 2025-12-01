@@ -7,7 +7,7 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from utilities.driver_factory import DriverFactory
 from utilities.helpers import take_screenshot
 from config.config import Config
-from pages import HomePage, LoginPage, RegisterPage, SearchResultsPage, ProductPage, CartPage
+from pages import HomePage, FlightsPage, PurchasePage, ConfirmationPage
 
 
 # Ensure directories exist
@@ -66,27 +66,21 @@ def home_page(driver: WebDriver) -> HomePage:
 
 
 @pytest.fixture(scope="function")
-def login_page(driver: WebDriver) -> LoginPage:
-    """Create and return a LoginPage instance."""
-    page = LoginPage(driver)
-    page.open_login_page()
-    return page
+def flights_page(driver: WebDriver) -> FlightsPage:
+    """Create and return a FlightsPage instance."""
+    return FlightsPage(driver)
 
 
 @pytest.fixture(scope="function")
-def register_page(driver: WebDriver) -> RegisterPage:
-    """Create and return a RegisterPage instance."""
-    page = RegisterPage(driver)
-    page.open_register_page()
-    return page
+def purchase_page(driver: WebDriver) -> PurchasePage:
+    """Create and return a PurchasePage instance."""
+    return PurchasePage(driver)
 
 
 @pytest.fixture(scope="function")
-def cart_page(driver: WebDriver) -> CartPage:
-    """Create and return a CartPage instance."""
-    page = CartPage(driver)
-    page.open_cart_page()
-    return page
+def confirmation_page(driver: WebDriver) -> ConfirmationPage:
+    """Create and return a ConfirmationPage instance."""
+    return ConfirmationPage(driver)
 
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
@@ -109,13 +103,11 @@ def pytest_configure(config):
     """Configure pytest with custom markers."""
     config.addinivalue_line("markers", "smoke: mark test as smoke test")
     config.addinivalue_line("markers", "regression: mark test as regression test")
-    config.addinivalue_line("markers", "login: mark test as login related")
-    config.addinivalue_line("markers", "registration: mark test as registration related")
-    config.addinivalue_line("markers", "search: mark test as search related")
-    config.addinivalue_line("markers", "cart: mark test as cart related")
-    config.addinivalue_line("markers", "checkout: mark test as checkout related")
+    config.addinivalue_line("markers", "flights: mark test as flight selection related")
+    config.addinivalue_line("markers", "purchase: mark test as purchase related")
+    config.addinivalue_line("markers", "booking: mark test as booking flow related")
 
 
 def pytest_html_report_title(report):
     """Set custom title for HTML report."""
-    report.title = "OpenCart Automation Test Report"
+    report.title = "BlazeDemo Automation Test Report"

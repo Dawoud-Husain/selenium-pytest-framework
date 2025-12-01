@@ -7,7 +7,7 @@ class Config:
     """Configuration settings for the test framework."""
 
     # Base URL
-    BASE_URL = "https://demo.opencart.com/"
+    BASE_URL = "https://www.blazedemo.com"
 
     # Browser settings
     BROWSER = os.getenv("BROWSER", "chrome")
