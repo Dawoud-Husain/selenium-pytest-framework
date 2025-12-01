@@ -1,0 +1,13 @@
+{
+    "search_terms": {
+        "valid": ["MacBook", "iPhone", "Samsung", "Canon", "HP"],
+        "invalid": ["xyznonexistent123", "!@#$%"],
+        "partial": ["Mac", "Phone", "Sam"]
+    },
+    "featured_products": [
+        "MacBook",
+        "iPhone",
+        "Apple Cinema 30\"",
+        "Canon EOS 5D"
+    ]
+}

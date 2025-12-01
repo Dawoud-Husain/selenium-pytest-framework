@@ -1,0 +1,14 @@
+{
+    "valid_user": {
+        "email": "test@example.com",
+        "password": "password123"
+    },
+    "invalid_user": {
+        "email": "invalid@example.com",
+        "password": "wrongpassword"
+    },
+    "empty_credentials": {
+        "email": "",
+        "password": ""
+    }
+}
