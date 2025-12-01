@@ -49,7 +49,13 @@ class DriverFactory:
         # Suppress logging
         options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-        service = ChromeService(ChromeDriverManager().install())
+        # Use system ChromeDriver if available, otherwise use webdriver-manager
+        import os
+        chromedriver_path = os.path.expanduser('~/bin/chromedriver')
+        if os.path.exists(chromedriver_path):
+            service = ChromeService(chromedriver_path)
+        else:
+            service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service, options=options)
 
         driver.implicitly_wait(Config.IMPLICIT_WAIT)
