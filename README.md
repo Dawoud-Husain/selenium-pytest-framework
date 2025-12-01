@@ -1,6 +1,6 @@
-# OpenCart E2E Test Automation Framework
+# BlazeDemo E2E Test Automation Framework
 
-A professional, production-ready end-to-end test automation framework for the OpenCart demo e-commerce site using Python, Selenium WebDriver, and pytest.
+A professional, production-ready end-to-end test automation framework for the BlazeDemo flight booking site using Python, Selenium WebDriver, and pytest.
 
 ## 🚀 Features
 
@@ -16,7 +16,7 @@ A professional, production-ready end-to-end test automation framework for the Op
 ## 📁 Project Structure
 
 ```
-opencart-automation/
+selenium-pytest-framework/
 ├── .github/workflows/      # CI/CD pipeline
 ├── config/                 # Configuration settings
 ├── pages/                  # Page Object classes
@@ -32,8 +32,8 @@ opencart-automation/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/opencart-automation.git
-cd opencart-automation
+git clone https://github.com/Dawoud-Husain/selenium-pytest-framework.git
+cd selenium-pytest-framework
 ```
 
 2. Create virtual environment:
@@ -66,7 +66,7 @@ pytest tests/ -m regression -v
 
 ### Run specific test file:
 ```bash
-pytest tests/test_login.py -v
+pytest tests/test_flight_booking.py -v
 ```
 
 ### Run in headless mode:
@@ -90,10 +90,9 @@ pytest tests/ --browser firefox
 |--------|-------------|
 | `smoke` | Quick tests for basic functionality |
 | `regression` | Full regression test suite |
-| `login` | Login-related tests |
-| `registration` | Registration-related tests |
-| `search` | Product search tests |
-| `cart` | Shopping cart tests |
+| `flights` | Flight selection tests |
+| `purchase` | Purchase/checkout tests |
+| `booking` | Complete booking flow tests |
 
 ## 🔧 Configuration
 
@@ -106,8 +105,15 @@ Edit `config/config.py` to modify:
 ## 📝 Test Data
 
 Test data is stored in JSON files under `test_data/`:
-- `users.json` - User credentials
-- `products.json` - Product search terms
+- `bookings.json` - Passenger details, payment info, and flight routes
+
+## 🧩 Page Objects
+
+The framework includes page objects for:
+- `HomePage` - Select departure/destination cities and search flights
+- `FlightsPage` - View and select available flights
+- `PurchasePage` - Fill passenger and payment details
+- `ConfirmationPage` - View booking confirmation
 
 ## 🤝 Contributing
 
