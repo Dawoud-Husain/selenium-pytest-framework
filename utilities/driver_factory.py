@@ -1,8 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
 from config.config import Config
 
 
@@ -49,14 +45,8 @@ class DriverFactory:
         # Suppress logging
         options.add_experimental_option("excludeSwitches", ["enable-logging"])
 
-        # Use system ChromeDriver if available, otherwise use webdriver-manager
-        import os
-        chromedriver_path = os.path.expanduser('~/bin/chromedriver')
-        if os.path.exists(chromedriver_path):
-            service = ChromeService(chromedriver_path)
-        else:
-            service = ChromeService(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=options)
+        # Selenium Manager will automatically handle driver download
+        driver = webdriver.Chrome(options=options)
 
         driver.implicitly_wait(Config.IMPLICIT_WAIT)
         driver.set_page_load_timeout(Config.PAGE_LOAD_TIMEOUT)
@@ -74,8 +64,8 @@ class DriverFactory:
         options.add_argument("--width=1920")
         options.add_argument("--height=1080")
 
-        service = FirefoxService(GeckoDriverManager().install())
-        driver = webdriver.Firefox(service=service, options=options)
+        # Selenium Manager will automatically handle driver download
+        driver = webdriver.Firefox(options=options)
 
         driver.implicitly_wait(Config.IMPLICIT_WAIT)
         driver.set_page_load_timeout(Config.PAGE_LOAD_TIMEOUT)
