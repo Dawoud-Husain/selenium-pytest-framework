@@ -9,9 +9,9 @@ class FlightsPage(BasePage):
     FLIGHT_ROWS = (By.CSS_SELECTOR, "table tbody tr")
     CHOOSE_FLIGHT_BUTTONS = (By.CSS_SELECTOR, "input[type='submit']")
     PAGE_HEADING = (By.CSS_SELECTOR, "h3")
-    FLIGHT_PRICES = (By.CSS_SELECTOR, "table tbody tr td:nth-child(6)")
-    AIRLINE_NAMES = (By.CSS_SELECTOR, "table tbody tr td:nth-child(3)")
-    FLIGHT_NUMBERS = (By.CSS_SELECTOR, "table tbody tr td:nth-child(2)")
+    FLIGHT_PRICES = (By.CSS_SELECTOR, "table tbody tr td:nth-child(7)")
+    AIRLINE_NAMES = (By.CSS_SELECTOR, "table tbody tr td:nth-child(4)")
+    FLIGHT_NUMBERS = (By.CSS_SELECTOR, "table tbody tr td:nth-child(3)")
 
     def __init__(self, driver):
         super().__init__(driver)

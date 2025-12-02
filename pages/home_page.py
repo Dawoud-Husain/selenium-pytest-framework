@@ -11,7 +11,7 @@ class HomePage(BasePage):
     DESTINATION_SELECT = (By.NAME, "toPort")
     FIND_FLIGHTS_BUTTON = (By.CSS_SELECTOR, "input[type='submit']")
     TITLE_HEADING = (By.CSS_SELECTOR, "h1")
-    LOGO = (By.CSS_SELECTOR, ".navbar-brand")
+    LOGO = (By.PARTIAL_LINK_TEXT, "Travel The World")
 
     def __init__(self, driver):
         super().__init__(driver)
