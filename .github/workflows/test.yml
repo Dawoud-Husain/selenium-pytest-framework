@@ -1,4 +1,4 @@
-name: OpenCart Automation Tests
+name: BlazeDemo Automation Tests
 
 on:
   push:
